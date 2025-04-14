@@ -23,6 +23,19 @@ This project implements a client-server network application that provides basic 
 
 ---
 
+## How to Run?
+
+- Open a new terminal
+  - Run this command to compile everything: make
+  - Run this to start the server: make run-server
+- Open a different terminal
+  - Run this command to start the client: make run-client
+  - Enter any string (i.e a name)
+- Check the new generated log txt file to see the client-server connection process details
+
+
+---
+
 ## Project Structure
 
 ```plaintext
