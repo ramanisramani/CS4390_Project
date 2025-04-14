@@ -37,10 +37,15 @@ public class ClientHandler implements Runnable {
 
                 } else if (line.startsWith("REQUEST")) {
                     RequestMessage req = RequestMessage.parse(line);
-                    int result = MathCalculator.evaluate(req.getExpression());
-                    String response = req.getExpression() + "=" + result;
-                    out.println(new ResponseMessage(clientName, response).toProtocolString());
-                    logger.log(clientName + " requested: " + req.getExpression() + " → " + result);
+                    try {
+                        int result = MathCalculator.evaluate(req.getExpression());
+                        String response = req.getExpression() + "=" + result;
+                        out.println(new ResponseMessage(clientName, response).toProtocolString());
+                        logger.log(clientName + " requested: " + req.getExpression() + " → " + result);
+                    } catch (Exception e) {
+                        out.println("ERROR: " + e.getMessage());
+                        logger.log("Error from " + clientName + ": " + e.getMessage());
+                    }
 
                 } else if (line.startsWith("DISCONNECT")) {
                     ConnectionMessage msg = ConnectionMessage.parse(line);
@@ -50,9 +55,9 @@ public class ClientHandler implements Runnable {
                 }
             }
         } catch (Exception e) {
-            logger.log("Error with client " + clientName + ": " + e.getMessage());
+            logger.log("Fatal error with client " + clientName + ": " + e.getMessage());
         } finally {
-            try { socket.close(); } catch (IOException e) { /* ignore */ }
+            try { socket.close(); } catch (IOException e) {}
         }
     }
 }

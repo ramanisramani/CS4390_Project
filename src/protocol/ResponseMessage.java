@@ -15,7 +15,7 @@ public class ResponseMessage extends Message {
     }
 
     public static ResponseMessage parse(String msg) {
-        String[] parts = msg.split(":");
+        String[] parts = msg.split(":", 3);
         return new ResponseMessage(parts[1], parts[2]);
     }
 }

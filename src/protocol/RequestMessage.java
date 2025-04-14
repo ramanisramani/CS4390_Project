@@ -18,7 +18,7 @@ public class RequestMessage extends Message {
     }
 
     public static RequestMessage parse(String msg) {
-        String[] parts = msg.split(":");
+        String[] parts = msg.split(":", 3);
         return new RequestMessage(parts[1], parts[2]);
     }
 }
