@@ -39,7 +39,7 @@ This project implements a client-server network application that provides basic 
 ## Project Structure
 
 ```plaintext
-MathServer/
+CS4390_Project/
 ├── src/
 │   ├── server/
 │   │   ├── MathServer.java         # Main server implementation
