@@ -31,7 +31,8 @@ This project implements a client-server network application that provides basic 
 - Open a different terminal
   - Run this command to start the client: make run-client
   - Enter any string (i.e a name)
-- Check the new generated log txt file to see the client-server connection process details
+- Check the newly generated log txt file to see the client-server connection process details
+- Run this command to undo: make clean
 
 
 ---
