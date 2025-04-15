@@ -36,7 +36,7 @@ This project implements a client-server network application that provides basic 
         - Enter a different name to identify them from previous clients on the server
   - When your session is over in the expression entry type: `exit`
         - The session will disconnect and display a session summary to the client 
-- Check the newly generated log txt file to see the client-server connection process details from the server side log
+- Check the newly generated log txt file to see the client-server connection process details from the server-side log
 - Run this command to undo: `make clean`
 
 
