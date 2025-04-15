@@ -32,7 +32,11 @@ This project implements a client-server network application that provides basic 
 - Open a different terminal
   - Run this command to start the client: `make run-client`
   - Enter any string (i.e a name)
-- Check the newly generated log txt file to see the client-server connection process details
+  - For every client you want to add open a new terminal and enter the command to start the client again
+        - Enter a different name to identify them from previous clients on the server
+  - When your session is over in the expression entry type: `exit`
+        - The session will disconnect and display a session summary to the client 
+- Check the newly generated log txt file to see the client-server connection process details from the server side log
 - Run this command to undo: `make clean`
 
 
