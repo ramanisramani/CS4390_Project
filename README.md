@@ -6,25 +6,26 @@ This project implements a client-server network application that provides basic 
 ---
 
 ## Features
-
-- Centralized math server with multi-client support  
-- Tracking of user connections and activities  
-- Request queuing and processing in order of receipt  
-- Basic math operations (addition, subtraction, multiplication, division)  
-- Clean connection establishment and termination protocol  
-- Comprehensive logging of all activities  
+- Multi-client support using threads (via thread pool)
+- Manual user input of expressions (no input limit)
+- Graceful disconnect by typing `exit`
+- Local client history of expressions and results
+- Server-side logging of:
+  - Client connections/disconnections
+  - Expression evaluations
+  - Errors and session duration
+- Supported operations: `+`, `-`, `*`, `/`  
 
 ---
 
 ## Prerequisites
-
-- Java Development Kit (JDK) 11 or higher  
-- Network connectivity between server and client machines  
+- Java Development Kit (JDK) **11 or higher**
+- Terminal access (macOS, Linux, or Windows PowerShell)
+- Optional: VS Code or IntelliJ for editing 
 
 ---
 
 ## How to Run?
-
 - Open a new terminal
   - Run this command to compile everything: make
   - Run this to start the server: make run-server
@@ -49,7 +50,6 @@ CS4390_Project/
 │   │   └── Logger.java             # Handles server-side logging
 │   ├── client/
 │   │   ├── MathClient.java         # Main client implementation
-│   │   └── RequestGenerator.java   # Generates random math requests
 │   └── protocol/
 │       ├── Message.java            # Message format definition
 │       ├── RequestMessage.java     # Math calculation request
