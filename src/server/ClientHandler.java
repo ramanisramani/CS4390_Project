@@ -56,7 +56,7 @@ public class ClientHandler implements Runnable {
                     RequestMessage req = RequestMessage.parse(line);
                     try {
                         int result = MathCalculator.evaluate(req.getExpression()); // Evaluate expression
-                        String response = req.getExpression() + "=" + result;
+                        String response = req.getExpression() + " = " + result;
                         out.println(new ResponseMessage(clientName, response).toProtocolString());
                         logger.log(clientName + " requested: " + req.getExpression() + " → " + result);
                     } catch (Exception e) {
