@@ -38,6 +38,7 @@ public class MathCalculator {
                 if (b == 0) throw new ArithmeticException("Divide by zero");
                 yield a / b;
             }
+            case "%" -> a % b;
             // If an unsupported operator is used, throw an error
             default -> throw new Exception("Unknown operator: " + op);
         };
