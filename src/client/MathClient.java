@@ -53,10 +53,15 @@ public class MathClient {
                 }
 
                 // Step 9: Normalize formatting - space around operators
-                expr = expr.replaceAll("(?<=[0-9])(?=[+\\-*/])", " ")
-                           .replaceAll("(?<=[+\\-*/])(?=[0-9])", " ")
-                           .replaceAll("\\s+", " ")
-                           .trim();
+                expr = expr
+                // insert a space between a digit and any operator (+ - * / %)
+                .replaceAll("(?<=[0-9])(?=[+\\-*/%])", " ")
+                // insert a space between any operator (+ - * / %) and a digit
+                .replaceAll("(?<=[+\\-*/%])(?=[0-9])", " ")
+                // collapse any run of spaces to a single space
+                .replaceAll("\\s+", " ")
+                .trim();
+              
 
                 // Step 10: Send REQUEST to server
                 out.println(new RequestMessage(name, expr).toProtocolString());
